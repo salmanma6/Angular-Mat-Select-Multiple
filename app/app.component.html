@@ -1,0 +1,12 @@
+<form id="form" [formGroup]="poemForm">
+  <mat-form-field>
+      <mat-select [formControlName]="'animationType'" placeholder="select animation" multiple>
+        <mat-option *ngFor="let type of animationTypes" [value]="type">
+          {{type.name}}
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
+  <p>formControl value is set to:  <strong>{{poemForm.value.animationType.name}}</strong></p>
+</form>
+
+<button (click)="reset">reset</button>
